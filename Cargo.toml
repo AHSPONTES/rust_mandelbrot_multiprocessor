@@ -1,5 +1,5 @@
 [package]
-name = "rust_mandelbrot"
+name = "rust_mandelbrot_multiprocessor"
 version = "0.1.0"
 edition = "2018"
 
@@ -8,3 +8,4 @@ edition = "2018"
 [dependencies]
 num = "0.4"
 image = "0.13.0"
+crossbeam = "0.8"
