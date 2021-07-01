@@ -1,6 +1,7 @@
 use image::png::PNGEncoder;
 use image::ColorType;
 use num::Complex;
+use std::env;
 use std::fs::File;
 use std::str::FromStr;
 
@@ -166,7 +167,7 @@ fn write_image(
     pixels: &[u8],
     bounds: (usize, usize),
 ) -> Result<(), std::io::Error> {
-    let output = Fle::create(filename)?;
+    let output = File::create(filename)?;
 
     let encoder = PNGEncoder::new(output);
     encoder.encode(
@@ -176,5 +177,5 @@ fn write_image(
         ColorType::Gray(8),
     )?;
 
-    OK(())
+    Ok(())
 }
